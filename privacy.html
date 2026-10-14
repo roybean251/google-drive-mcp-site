@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Integritetspolicy · Google Drive MCP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <nav><a href="index.html">← Google Drive MCP</a></nav>
+    <h1>Integritetspolicy</h1>
+    <p class="lead">Google Drive MCP</p>
+    <p>Senast uppdaterad den 15 oktober 2026.</p>
+    <section>
+      <h2>Om integrationen</h2>
+      <p>Google Drive MCP är en privat integration som endast används av sin ägare för arbete med det egna anslutna Google Drive-kontot. Den erbjuds inte till andra användare. Policyn beskriver integrationens behandling av Google-data och den här informationssidan.</p>
+    </section>
+    <section>
+      <h2>Vilka uppgifter behandlas?</h2>
+      <p>Integrationen behandlar fil- och mappmetadata, exempelvis ID, namn, filtyp, mappstruktur, tidsstämplar, storlek och länkar. När en uppgift kräver det behandlas också filinnehåll, dokumenttext, kalkylbladsvärden och formler samt filer som användaren skickar för uppladdning.</p>
+      <p>En anslutningskontroll kan hämta Google-kontots användaruppgifter genom Drive API för att kontrollera att anslutningen fungerar. OAuth-uppgifter, inklusive åtkomsttoken och förnyelsetoken, behandlas av servern för att autentisera anrop till Google.</p>
+    </section>
+    <section>
+      <h2>Åtkomst och användning</h2>
+      <p>Integrationen använder Googles behörigheter för Drive, Docs och Sheets för att genomföra filuppgifter. Dessa OAuth-behörigheter är bredare än en enskild mapp. Serverns separata mapplistor begränsar vilka mål som får läsas respektive ändras, inom det anslutna kontots Google-behörigheter.</p>
+      <p>Uppgifter används för att söka, läsa, skapa, ladda upp, uppdatera, flytta och kopiera filer, skapa säkerhetskopior samt flytta filer till papperskorgen. Data används också för återläsning och kontroll av ändringar, revisionsloggning och felsökning.</p>
+    </section>
+    <section>
+      <h2>Var behandlas data och vem får den?</h2>
+      <p>Google tillhandahåller filerna och tar emot begärda ändringar genom sina API:er. Servern körs på Render och behandlar de uppgifter som behövs för anropen där.</p>
+      <p>Integrationen används för närvarande endast via ChatGPT. Resultat med filinnehåll och metadata skickas till ChatGPT och behandlas av OpenAI för att genomföra uppgiften. OpenAI:s villkor och inställningarna för det använda kontot styr tjänstens fortsatta lagring och användning av uppgifterna. Denna policy innehåller inget löfte om att ChatGPT saknar lagring eller modellträning.</p>
+      <p>Vid uppladdning från en angiven nedladdningslänk hämtar servern filen från länkens leverantör och laddar upp den till Google Drive. Leverantören tar då emot en nedladdningsbegäran från servern.</p>
+      <p>Besök på informationssidan ger inte GitHub åtkomst till Google Drive eller till OAuth-uppgifterna.</p>
+    </section>
+    <section>
+      <h2>Lagring och loggar</h2>
+      <p>Filinnehåll bearbetas i serverns arbetsminne. Den granskade programkoden har inget separat beständigt arkiv för hämtat filinnehåll. Filer som skapas eller ändras, samt kopior och säkerhetskopior, finns kvar i Google Drive tills de tas bort där.</p>
+      <p>OAuth-uppgifterna läses från en separat konfigurerad fil på servern och används även i arbetsminnet. Att koppla bort MCP-klienten raderar inte automatiskt serverns OAuth-fil.</p>
+      <p>Åtgärdsloggar skrivs till serverns loggutmatning och kan därmed lagras hos Render. De innehåller tidpunkt, åtgärd, status, fil-ID och operationsdetaljer. Detaljerna kan omfatta filnamn, tidigare och nya namn, mapp-ID, säkerhetskopie-ID, kalkylbladsnamn och cellintervall, filtyp, storlek, kontrollsumma och felmeddelanden.</p>
+      <p>Hur länge serverloggar är tillgängliga hos Render styrs av Render-arbetsytans plan. Enligt <a href="https://render.com/docs/logging">Renders dokumentation</a> är perioden för närvarande 7 dagar för Hobby, 14 dagar för Pro och 30 dagar för Scale/Enterprise. En separat exporterad eller vidarebefordrad kopia omfattas inte automatiskt av denna period.</p>
+      <p>Beständig revisionsloggning är aktiverad som standard i koden. När den är aktiverad och en skrivmapp är konfigurerad sparas loggposter också i ett Google Sheets-kalkylblad i den första tillåtna skrivmappen. Ingen automatisk gallring av den revisionsloggen finns i den granskade koden.</p>
+    </section>
+    <section>
+      <h2>Återkalla åtkomst och ta bort uppgifter</h2>
+      <p>Du kan återkalla integrationens Google-åtkomst via <a href="https://myaccount.google.com/connections">anslutningarna i ditt Google-konto</a>. Återkallad åtkomst innebär inte att befintliga filer, säkerhetskopior, loggar eller resultat i MCP-klienten automatiskt raderas.</p>
+      <p>Filer, kopior och revisionsloggar i Google Drive hanteras där av integrationens ägare. Funktionen för borttagning i integrationen flyttar filer till papperskorgen och utför inte permanent radering. Serverns lagrade OAuth-fil måste tas bort separat av ägaren som administrerar servern. För radering av serverloggar eller klienthistorik behöver även respektive tjänsts möjligheter och lagringsregler beaktas.</p>
+    </section>
+    <section>
+      <h2>Informationssidan</h2>
+      <p>Informationssidan innehåller inga egna analysverktyg, annonser, formulär, spårningsskript eller cookies. GitHub Pages är webbvärd och kan behandla tekniska besöksuppgifter enligt <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs integritetspolicy</a>.</p>
+    </section>
+    <section>
+      <h2>Ändringar</h2>
+      <p>Policyn ska uppdateras när integrationens datahantering ändras. Ny användning eller delning av Google-data ska beskrivas innan den påbörjas, med nytt samtycke där det krävs.</p>
+    </section>
+    <footer><a href="index.html">Till hemsidan</a></footer>
+  </main>
+</body>
+</html>
